@@ -1,4 +1,4 @@
 flask
-flask-cors
-torch
-transformers
+langchain-core
+langchain-community
+langchain-chroma

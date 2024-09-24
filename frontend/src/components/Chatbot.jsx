@@ -9,8 +9,7 @@ const Chatbot = () => {
     e.preventDefault();
     try {
       const result = await axios.post("/api/generate", {
-        prompt: input,
-        max_length: 50,
+        query: input,
       });
       console.log(result.data.response);
       setResponse(result.data.response);
