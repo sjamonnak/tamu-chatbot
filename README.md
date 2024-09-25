@@ -1,8 +1,8 @@
-# TAMU ASSISTIVE CHATBOT
+## AggieMapBot - TAMU Assistant ChatBot
 
 > An Intelligent Campus Assistant: Combining Assistive Chatbot and Digital Twin for Enhanced Event and Course Navigation
 
-## Prerequisites
+### Prerequisites
 
 This project requires NodeJS (version 8 or later) and NPM.
 [Node](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
@@ -13,7 +13,7 @@ $ cd frontend
 $ npm install
 ```
 
-## Backend Setup
+### Backend Setup
 ```bash
 $ cd backend
 $ python -m venv venv # set up python environment
@@ -31,7 +31,7 @@ $ ollama pull mistral
 $ ollama serve
 ```
 
-## Start application
+### Start application
 Go back to home directory and start both backend and frontend separately.
 ```bash
 # startbackend
@@ -44,7 +44,7 @@ $ npm run dev
 
 Local application can be accessed at: [http://localhost:5173/](http://localhost:5173/)
 
-## Authors and Contacts
+### Authors and Contacts
 Suphanut Jamonnak ([j.suphanut@tamu.edu](mailto:j.suphanut@tamu.edu?subject=[GitHub]%20Source%20Han%20Sans))<br/>
 Wenyu Zhang ([wenyu.zhang@tamu.edu](mailto:wenyu.zhang@tamu.edu?subject=[GitHub]%20Source%20Han%20Sans))<br/>
 Regina Ye ([reginay3@gmail.com](mailto:reginay3@gmail.com?subject=[GitHub]%20Source%20Han%20Sans))<br/>
