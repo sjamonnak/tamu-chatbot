@@ -1,4 +1,4 @@
 flask
-langchain-core
+scikit-learn
+sentence-transformers
 langchain-community
-langchain-chroma

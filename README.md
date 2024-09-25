@@ -7,14 +7,18 @@
 This project requires NodeJS (version 8 or later) and NPM.
 [Node](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
 
-## Frontend and Backend Setup
+### Frontend Setup
 ```bash
-# backend setup
-$ cd backend
-$ pip install -r requirements.txt
-# frontend setup
 $ cd frontend
 $ npm install
+```
+
+## Backend Setup
+```bash
+$ cd backend
+$ python -m venv venv # set up python environment
+$ source venv/bin/activate # or venv\Scripts\activate (Windows)
+$ pip install -r requirements.txt # install all required packages
 ```
 
 ### Setup Ollama locally
@@ -23,8 +27,6 @@ Then pull a model by running these commands:
 ```bash
 # llm model
 $ ollama pull mistral
-# text embedding model
-$ ollama pull nomic-embed-text
 # run Ollama
 $ ollama serve
 ```

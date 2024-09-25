@@ -1,63 +1,43 @@
-import os
-import json
 from flask import Flask, request, jsonify
-from preprocess import load_data, preprocess_events, write_to_csv
-from _ollama import prepare_documents, store_documents, get_embeddings
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 from langchain_community.llms import Ollama
-from langchain_chroma import Chroma
+from preprocess import load_data, preprocess_events, transform_event_to_sentence
 
-CSV_FILE_PATH = os.path.join("..", "data", "tamu_events.csv")
-CHROMA_DIR = os.path.join("chroma")
 TAMU_EVENTS_URL = "https://calendar.tamu.edu/live/json/events/group"
 
-# load Ollama model
-print("Load Ollama model and Chroma database ...")
-ollama_model = Ollama(model="mistral")
-# load database
-chroma_db = Chroma(persist_directory=CHROMA_DIR, embedding_function=get_embeddings())
 # initialize flask application
 app = Flask(__name__)
+embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+llm_model = Ollama(model="mistral")
 
 @app.route("/generate", methods=["POST"])
 def generate_response():
-  try:
-    # get query input from the user
-    bytes_value = request.data.decode('utf8').replace("'", '"')
-    data = json.loads(bytes_value)
-    query = data["query"]
-    # search relevant events
-    relevant_events = chroma_db.similarity_search(query)
-    print(relevant_events)
-    # create events context
-    context_text = "\n\n".join(f"Event {i+1}:\n{event}" for i, event in enumerate(relevant_events))
-    # create prompt for ollma
-    prompt = f"""
-    You are an AI assistant, your task is to get five relevant events as context.
-    Plase answer the question based only on the following context, as briefly as possible:
-    {context_text}
-    ---
-    Question: {query}
-    Answer:
-    """
-    response = ollama_model.invoke(prompt)
-    print("Context: ", context_text)
-    print("Response:", response)
-    return jsonify({"response": response})
-  except Exception as e:
-    return jsonify({"error": str(e)}), 500
+  return jsonify({"response": "hello"})
   
 if __name__ == "__main__":
-  # preprocessing and write to csv file
-  # print("Load events data from TAMU website ...")
-  # data = load_data(TAMU_EVENTS_URL)
-  # print("Preprocessing data ...")
-  # preprocessed_data = preprocess_events(data)
-  # print("Write preprocessed data to csv file ...")
-  # write_to_csv(CSV_FILE_PATH, preprocessed_data)
-  # prepare csv file, and store it in database
-  # print("Store csv file into a database ...")
-  # documents = prepare_documents(CSV_FILE_PATH)
-  # print("Store documents ...")
-  # store_documents(CHROMA_DIR, documents)
-  # print("Start flask application ...")
+  events = load_data(TAMU_EVENTS_URL)
+  preprocessed_events = preprocess_events(events)
+  texts = []
+  for e in preprocessed_events:
+    sentence = transform_event_to_sentence(e)
+    texts.append(sentence)
+  data_embeddings = embedding_model.encode(texts)
+  query = "Any career fair happening soon?"
+  query_embedding = embedding_model.encode(query)
+  # Compute cosine similarity between the query and all data embeddings
+  similarities = cosine_similarity([query_embedding], data_embeddings).flatten()
+  top_5_indices = similarities.argsort()[::-1][:5]
+  top_5_texts = [texts[i] for i in top_5_indices]
+  context_text = "\n".join(f"Event {i+1}:\n{event}" for i, event in enumerate(top_5_texts))
+  print(context_text)
+  prompt = f"""
+  Answer the question based only on the following context, as briefly as possible:
+  {context_text}
+  ---
+  Question: {query}
+  Answer:
+  """
+  response = llm_model.invoke(prompt)
+  print("Response:", response)
   app.run(host="0.0.0.0", port=5000, debug=True)
