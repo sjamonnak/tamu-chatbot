@@ -57,4 +57,4 @@ if __name__ == "__main__":
     sentence = transform_event_to_sentence(e)
     texts.append(sentence)
   data_embeddings = embedding_model.encode(texts)
-  app.run(host="0.0.0.0", port=5000, debug=True)
+  app.run(host="0.0.0.0", port=4999, debug=True)
