@@ -3,3 +3,5 @@ flask-cors
 scikit-learn
 sentence-transformers
 langchain-community
+geopandas
+matplotlib
