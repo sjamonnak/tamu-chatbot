@@ -1,0 +1,255 @@
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d5" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="&quot;CONVOLUTIONAL NEURAL NETWORKS (CNNS)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1"> Convolutional Neural Networks (CNNs), often referred to as ConvNets, are a specific type of artificial neural network primarily utilized across various domains. They are particularly designed to process structured grid data, such as images. However, it is important to note that CNNs have certain limitations, including difficulties in understanding global context and being perceived as black-box models. Despite these challenges, they remain valuable tools in the field of machine learning and computer vision.</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;LENET&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"LeNet is a CNN developed by LeCun et al. for digit recognition in the 1980s."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;COMPUTER VISION APPLICATIONS&quot;">
+      <data key="d0">"APPLICATION"</data>
+      <data key="d1">"Computer vision applications are tasks that utilize CNNs, such as image classification, object detection, and segmentation."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;CONVOLUTIONAL LAYERS&quot;">
+      <data key="d0">"COMPONENT"</data>
+      <data key="d1">"Convolutional layers are the core building blocks of a CNN, where filters slide over input data to produce feature maps."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;FILTERS (OR KERNELS)&quot;">
+      <data key="d0">"COMPONENT"</data>
+      <data key="d1">"Filters or kernels in convolutional layers are trained to recognize various patterns such as edges, textures, and shapes."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;POOLING LAYERS&quot;">
+      <data key="d0">"COMPONENT"</data>
+      <data key="d1">"Pooling layers, like max pooling, are used after convolutional layers to reduce the spatial dimensions of feature maps."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;FULLY CONNECTED LAYERS&quot;">
+      <data key="d0">"COMPONENT"</data>
+      <data key="d1">"Fully connected layers perform the final classification or regression task at the end of a CNN."</data>
+      <data key="d2">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </node>
+    <node id="&quot;VGG16&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"VGG16 is a popular deep CNN architecture with 16 convolutional layers, developed by Karen Simonyan and Andrew Zisserman."</data>
+      <data key="d2">24110ecfaf024767591e515404c05740,c3266a780bc35224fa533cf7f4de8bc0,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;RESNET&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1"> The ResNet (Residual Network), initially introduced in 2015, is a significant deep residual learning network that was developed to address the vanishing gradient problem and facilitate the training of very deep networks. This family of networks was presented by Microsoft Research.</data>
+      <data key="d2">24110ecfaf024767591e515404c05740,c3266a780bc35224fa533cf7f4de8bc0,cdffd137d0f4d7b4797fec88809d5bad,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;INCEPTION NETWORK&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Inception Network, also known as GoogLeNet, is a CNN architecture developed by Google for the ImageNet competition in 2014."</data>
+      <data key="d2">24110ecfaf024767591e515404c05740,c3266a780bc35224fa533cf7f4de8bc0,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;U-NET&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1"> The entity known as "U-Net" is a fully convolutional neural network, specifically designed and utilized for the purpose of biomedical image segmentation tasks. This network architecture has gained widespread recognition in the field due to its effectiveness in this particular application.</data>
+      <data key="d2">24110ecfaf024767591e515404c05740,c3266a780bc35224fa533cf7f4de8bc0,cdffd137d0f4d7b4797fec88809d5bad,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;CONVOLUTIONAL NEURAL NETWORK (CNN)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Convolutional Neural Networks are a type of artificial neural network used primarily for processing data with a grid-like structure, such as images."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;ALEXNET&quot;">
+      <data key="d0">"MODEL"</data>
+      <data key="d1">"AlexNet is a deep convolutional neural network introduced in 2012 and has achieved state-of-the-art performance on the ImageNet dataset."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;VGGNET&quot;">
+      <data key="d0">"MODEL"</data>
+      <data key="d1">"VGGNet is another deep convolutional neural network that has been widely used for image classification tasks."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;YOLO&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"You Only Look Once (YOLO) is an object detection system that uses a single convolutional neural network to identify and localize objects within images."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;FASTER R-CNN&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Faster R-CNN is another object detection system that leverages region proposal networks (RPNs) and a CNN for object detection."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;MEDICAL IMAGING&quot;">
+      <data key="d0">"DOMAIN"</data>
+      <data key="d1">"Medical Imaging refers to the use of images, such as X-rays, MRIs, and CT scans, to diagnose diseases."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;NATURAL LANGUAGE PROCESSING (NLP)&quot;">
+      <data key="d0">"DOMAIN"</data>
+      <data key="d1">"Natural Language Processing is a field of study concerned with the interaction between computers and human languages."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;SENTENCE CLASSIFICATION&quot;">
+      <data key="d0">"TASK"</data>
+      <data key="d1">"Sentence Classification is a task in NLP where a model classifies sentences into predefined categories, such as positive or negative sentiment."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;TEXT GENERATION&quot;">
+      <data key="d0">"TASK"</data>
+      <data key="d1">"Text Generation is a task in NLP where a model generates human-like text based on input data."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;COMPUTER VISION&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;DEEPFAKES&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"DeepFakes are realistic fake videos created using deep learning techniques, often for malicious purposes."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;GENERATIVE ADVERSARIAL NETWORK (GAN)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Generative Adversarial Networks are a class of deep learning models that can generate new data samples that resemble the training data."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;RECURRENT NEURAL NETWORK (RNN)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Recurrent Neural Networks are a type of artificial neural network used for sequential data, such as time series or natural language processing tasks."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;LONG SHORT-TERM MEMORY (LSTM)&quot;">
+      <data key="d0">"MODEL"</data>
+      <data key="d1">"Long Short-Term Memory is a special kind of Recurrent Neural Network that can learn long-term dependencies in sequences."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;SUPPORT VECTOR MACHINES (SVM)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Support Vector Machines are a type of supervised learning algorithm used for classification and regression tasks."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;RANDOM FOREST&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Random Forest is an ensemble learning method that combines multiple decision trees to improve predictive accuracy."</data>
+      <data key="d2">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </node>
+    <node id="&quot;MOBILENETS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"MobileNets is an efficient architecture for Convolutional Neural Networks designed to reduce computational complexity while maintaining high performance."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;EFFICIENTNETS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"EfficientNets is another efficient architecture for Convolutional Neural Networks, similar to MobileNets."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;NEURAL ARCHITECTURE SEARCH (NAS)&quot;">
+      <data key="d0">"CONCEPT"</data>
+      <data key="d1">"Neural Architecture Search (NAS) is a technique that allows for the automated design of optimized network structures tailored to specific tasks and hardware constraints."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;RECURRENT NEURAL NETWORKS (RNNS)&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Recurrent Neural Networks (RNNs) are a type of artificial neural network used for sequential data, which can be integrated with Convolutional Neural Networks to create hybrid models."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;TRANSFORMERS&quot;">
+      <data key="d0">"TECHNOLOGY"</data>
+      <data key="d1">"Transformers are a type of model architecture used in natural language processing tasks, which can also be integrated with Convolutional Neural Networks."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;GENOMICS&quot;">
+      <data key="d0">"FIELD"</data>
+      <data key="d1">"Genomics is a field that studies the structure, function, and evolution of genomes, and the application of CNNs in this field is expanding."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;CLIMATE SCIENCE&quot;">
+      <data key="d0">"FIELD"</data>
+      <data key="d1">"Climate Science is a field that studies the Earth's climate and its changes, and the application of CNNs in this field is also growing."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;ART GENERATION&quot;">
+      <data key="d0">"FIELD"</data>
+      <data key="d1">"Art Generation is a field where CNNs are being applied to create art, demonstrating their versatility."</data>
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;LIMITATIONS&quot;">
+      <data key="d0" />
+      <data key="d1" />
+      <data key="d2">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <node id="&quot;CNNS&quot;">
+      <data key="d0" />
+      <data key="d1"> The Convolutional Neural Networks (CNNs), referred to as "CNNS", are versatile artificial neural networks capable of handling various data types and tasks. These tasks range from genomics, climate science, to art generation.</data>
+      <data key="d2">24110ecfaf024767591e515404c05740,fe02b9f1c1213b2b720b267a8706afc9</data>
+    </node>
+    <edge source="&quot;CONVOLUTIONAL NEURAL NETWORKS (CNNS)&quot;" target="&quot;COMPUTER VISION APPLICATIONS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Convolutional Neural Networks are used in various computer vision applications."</data>
+      <data key="d5">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </edge>
+    <edge source="&quot;CONVOLUTIONAL NEURAL NETWORKS (CNNS)&quot;" target="&quot;LIMITATIONS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Convolutional Neural Networks (CNNs) have limitations such as struggling with understanding global context and being viewed as black-box models."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;CONVOLUTIONAL LAYERS&quot;" target="&quot;FILTERS (OR KERNELS)&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Filters or kernels are used in convolutional layers to recognize patterns.") ("entity"</data>
+      <data key="d5">c3266a780bc35224fa533cf7f4de8bc0</data>
+    </edge>
+    <edge source="&quot;CONVOLUTIONAL NEURAL NETWORK (CNN)&quot;" target="&quot;COMPUTER VISION&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Convolutional Neural Networks are widely used for tasks such as image classification and object detection in computer vision.")&lt;|COMPLETE|&gt; ("entity"</data>
+      <data key="d5">cdffd137d0f4d7b4797fec88809d5bad</data>
+    </edge>
+    <edge source="&quot;MOBILENETS&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"MobileNets is an efficient architecture for Convolutional Neural Networks designed to reduce computational complexity while maintaining high performance."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;EFFICIENTNETS&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"EfficientNets is another efficient architecture for Convolutional Neural Networks, similar to MobileNets."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;NEURAL ARCHITECTURE SEARCH (NAS)&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Neural Architecture Search (NAS) allows for the automated design of optimized network structures tailored to specific tasks and hardware constraints."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;RECURRENT NEURAL NETWORKS (RNNS)&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Recurrent Neural Networks (RNNs) can be integrated with Convolutional Neural Networks to create hybrid models."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;TRANSFORMERS&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"Transformers can also be integrated with Convolutional Neural Networks."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;GENOMICS&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"The application of CNNs in genomics is expanding."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;CLIMATE SCIENCE&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"The application of CNNs in climate science is growing."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+    <edge source="&quot;ART GENERATION&quot;" target="&quot;CNNS&quot;">
+      <data key="d3">1.0</data>
+      <data key="d4">"CNNs are being applied to create art, demonstrating their versatility."</data>
+      <data key="d5">fe02b9f1c1213b2b720b267a8706afc9</data>
+    </edge>
+  </graph>
+</graphml>
