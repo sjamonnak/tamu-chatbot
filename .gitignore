@@ -1,0 +1,7 @@
+notebooks/result
+backend/__pycache__
+backend/venv
+notebooks/graphrag_index
+notebooks/input
+notebooks/neo4j
+notebooks/data

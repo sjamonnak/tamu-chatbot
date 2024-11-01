@@ -1,0 +1,4 @@
+flask
+langchain-core
+langchain-community
+langchain-chroma
