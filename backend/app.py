@@ -1,20 +1,26 @@
 import json
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-from langchain_community.llms import Ollama
+# from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM 
+from ollama import Client
 from preprocess import load_data, preprocess_events, transform_event_to_sentence
 
 TAMU_EVENTS_URL = "https://calendar.tamu.edu/live/json/events/group"
+MODEL_SERVER_URL = os.getenv("MODEL_SERVER_URL", "http://localhost:11434")
+client = Client(host=MODEL_SERVER_URL)
 
 # initialize flask application
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://frontend-f8j6.onrender.com", "http://localhost:5173"], supports_credentials=False)
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 llm_model = Ollama(model="mistral")
 preprocessed_events = None
 data_embeddings = None
+
 
 @app.route("/")
 def helloWorld():
@@ -57,4 +63,6 @@ if __name__ == "__main__":
     sentence = transform_event_to_sentence(e)
     texts.append(sentence)
   data_embeddings = embedding_model.encode(texts)
-  app.run(host="0.0.0.0", port=4999, debug=True)
+  # app.run(host="0.0.0.0", port=4999, debug=True)
+  port = int(os.getenv("PORT", 4999))
+  app.run(host="0.0.0.0", port=port, debug=True)

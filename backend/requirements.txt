@@ -6,3 +6,4 @@ langchain-community
 geopandas
 matplotlib
 node2vec
+ollama
