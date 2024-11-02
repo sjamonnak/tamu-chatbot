@@ -1,4 +1,9 @@
-import { map_draw_origin_destination_points, map_draw_travel_routes, map_remove_traveling_path } from "./map";
+import { 
+  map_draw_origin_destination_points, 
+  map_draw_parking_lots, 
+  map_draw_travel_routes, 
+  map_remove_traveling_path 
+} from "./map";
 import { direction_get_user_location } from "./direction";
 import { utils_hide_driving_instructions } from "./utils";
 
@@ -51,6 +56,8 @@ const event_list_items = (events) => {
       const this_event_item = document.getElementById("event-item-" + index);
       this_event_item.style.background = "#fee391";
       event_display_travel_path(event);
+      // show parking lot information
+      event_display_parking_lots(event);
     });
   }
 };
@@ -70,6 +77,24 @@ const event_display_travel_path = (event) => {
     const destination_lnglat = [parseFloat(dest_lng), parseFloat(dest_lat)];
     map_draw_travel_routes(user_loc, destination_lnglat);
     map_draw_origin_destination_points([user_loc, destination_lnglat]);
+  }
+};
+
+// display parking lots
+const event_display_parking_lots = (event) => {
+  const user_loc = direction_get_user_location(); // [lng, lat]
+  const dest_lng = event["location_longitude"];
+  const dest_lat = event["location_latitude"];
+
+  if (!user_loc || dest_lng == null || dest_lat == null) {
+    // clear all travel_path
+    map_remove_traveling_path();
+    utils_hide_driving_instructions();
+    // remove all parking lots
+  } else {
+    // show parking lot informations
+    const destination_lnglat = [parseFloat(dest_lng), parseFloat(dest_lat)];
+    map_draw_parking_lots(user_loc, destination_lnglat);
   }
 };
 

@@ -154,6 +154,7 @@ body {
   margin: 5px;
   width: 30%;
   top: 0;
+  right: 0;
   border: 1px solid #D1D1D1;
   overflow-y: scroll;
   z-index: 1000;

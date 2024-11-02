@@ -66,3 +66,35 @@ def transform_event_to_sentence(event):
   sentence += f" For more details, you can visit the event page at {url}." if url else ""
 
   return html.unescape(sentence)
+
+def get_parking_lot_geolocation(lot_code, basemap_parking_lot):
+  """ extract lat lng from parking lot polygon shape """
+  for row in basemap_parking_lot.itertuples():
+    if row.FAC_CODE == lot_code:
+      geometry = row.geometry
+      latlng = [geometry.centroid.x, geometry.centroid.y]
+      return latlng, list(geometry.exterior.coords)
+  return []
+
+def preprocess_parkings(parking_lots, basemap_parking_lot):
+  """ construct dictionary from parking lot data """
+  results = []
+  for parking_lot in parking_lots:
+    lot_code = parking_lot["FAC_Code"]
+    lot_name = parking_lot["FAC_Description"]
+    lot_capacity = parking_lot["FAC_Capacity"]
+    lot_occupied = parking_lot["FAC_Occupied"]
+    lot_available = parking_lot["FAC_Available"]
+    lot_lnglat, lot_geometry = get_parking_lot_geolocation(lot_code, basemap_parking_lot)
+    
+    results.append({
+      "lot_name": lot_name,
+      "lot_capacity": lot_capacity,
+      "lot_occupied": lot_occupied,
+      "lot_available": lot_available,
+      "lot_location_latitude": float(lot_lnglat[1]),
+      "lot_location_longitude": float(lot_lnglat[0]),
+      "lot_geometry": lot_geometry,
+    })
+
+  return results

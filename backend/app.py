@@ -4,9 +4,12 @@ from flask_cors import CORS
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from langchain_community.llms import Ollama
-from preprocess import load_data, preprocess_events, transform_event_to_sentence
+import geopandas as gpd
+from preprocess import load_data, preprocess_events, transform_event_to_sentence, preprocess_parkings
 
 TAMU_EVENTS_URL = "https://calendar.tamu.edu/live/json/events/group"
+TAMU_VISITOR_PARKING_URL = "https://transport.tamu.edu/ParkingFeed/api/lots/occupancy"
+TAMU_BASEMAP_PARKING_LOTS_BASEMAP = "https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_BaseMap/MapServer/0/query?where=1=1&outFields=*&f=geojson&&returnGeometry=true"
 
 # initialize flask application
 app = Flask(__name__)
@@ -48,6 +51,22 @@ def get_chatbot_response():
     })
   else:
     return jsonify({"error": "Fetch errors."}), 500
+  
+@app.route("/get_parking_lots", methods=["GET"])
+def get_parking_lots():
+  try:
+    # load parking lots and basemap data
+    parking_lots = load_data(TAMU_VISITOR_PARKING_URL)
+    tamu_basemap_parking_lots = load_data(TAMU_BASEMAP_PARKING_LOTS_BASEMAP)
+    # create geo dataframe from basemap
+    tamu_basemap = gpd.GeoDataFrame.from_features(tamu_basemap_parking_lots["features"])
+    preprocessed_parking_lots = preprocess_parkings(parking_lots, tamu_basemap)
+    print(preprocessed_parking_lots)
+    return jsonify({ 
+      "parking_lots": preprocessed_parking_lots,
+    })
+  except Exception as e:
+    return jsonify({"error": f"An error occurred: {e}"}), 500
   
 if __name__ == "__main__":
   events = load_data(TAMU_EVENTS_URL)
