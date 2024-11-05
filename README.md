@@ -25,10 +25,10 @@ $ pip install -r requirements.txt # install all required packages
 First, you need to download [Ollma](https://ollama.com/download)
 Then pull a model by running these commands:
 ```bash
-# llm model
-$ ollama pull mistral
 # run Ollama
 $ ollama serve
+# llm model
+$ ollama pull mistral
 ```
 
 ### Start application
