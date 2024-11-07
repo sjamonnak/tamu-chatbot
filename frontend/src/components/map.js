@@ -19,8 +19,10 @@ import {
   utils_add_walking_instructions 
 } from './utils';
 
-const GOOGLE_API_KEY = atob("QUl6YVN5RE1JOXkzdDVhcmY4T1NtUTd0ZlFhbC1udGVCNnNQVGQw");
-const TILESET_URL = "https://tile.googleapis.com/v1/3dtiles/root.json";
+const GOOGLE_API_KEY = atob(import.meta.env.VITE_GOOGLE_API_KEY);
+// const GOOGLE_API_KEY = atob("QUl6YVN5RE1JOXkzdDVhcmY4T1NtUTd0ZlFhbC1udGVCNnNQVGQw");
+//const TILESET_URL = "https://tile.googleapis.com/v1/3dtiles/root.json";
+const TILESET_URL = `https://tile.googleapis.com/v1/3dtiles/root.json?key=${GOOGLE_API_KEY}`;
 
 let the_deck = undefined;
 // tile_layers: use this to manage all tile layers in deck.gl
