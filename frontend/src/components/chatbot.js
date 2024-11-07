@@ -1,13 +1,16 @@
 import axios from "axios";
 import { event_list_items } from "./events";
 
-const chatbot_response = (user_input) => {
+const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/get_chatbot_response`;
 
+const chatbot_response = (user_input) => {
+  console.log("API URL:", apiUrl);
+  
   // show loading while requesting chatbot response
   const agent_input_area = document.getElementById("agent-input-area");
   agent_input_area.value = "Generating response ...";
   
-  axios.get("/api/get_chatbot_response", {
+  axios.get(apiUrl, {
     params: {
       query: user_input
     }
@@ -18,8 +21,9 @@ const chatbot_response = (user_input) => {
     event_list_items(result.data.events);
   }).catch(error => {
     console.log(error);
+    // Add error handling for user feedback
+    agent_input_area.value = "Sorry, there was an error getting the response. Please try again.";
   });
-
 };
 
 export {
